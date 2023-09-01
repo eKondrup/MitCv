@@ -1,0 +1,432 @@
+:root {
+    --yellow: hsl(35, 72%, 66%);
+    --dblue: hsl(199, 87%, 18%);
+    --mblue: hsl(199, 89%, 23%);
+    --lblue: hsl(202, 89%, 44%);
+    --red: hsl(0, 100%, 30%);
+    --brown: hsl(27, 100%, 30%);
+    /*--yellow: hsl(35, 72%, 66%);
+    --dblue: hsl(199, 87%, 18%);
+    --mblue: hsl(199, 89%, 23%);
+    --lblue: hsl(209, 85%, 35%);*/
+    --slides: 2;
+    --work: 16.67%;
+}
+
+
+/*:root {
+    --yellow: hsl(35, 78%, 66%);
+    --dblue: hsl(209, 85%, 11%);
+    --mblue: hsl(199, 87%, 12%);
+    --lblue: hsl(199, 89%, 21%);
+}
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: max-contents;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    /*margin-left:5px;*/
+    padding: 0;
+    overflow-x: hidden;
+}
+
+main {
+    /*problem med width. Width:33%; skaber "gutters" i højre side*/
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#slider-parent {
+    overflow-x: hidden;
+}
+
+slider {
+    width: calc(var(--slides)*100%) !important;
+    max-width: unset !important;
+    height: max-content;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    transition: transform .7s;
+    z-index:1;
+}
+
+slider-content {
+    /*slides/100*/
+    width: 50% !important;
+}
+
+slider-controls {
+    height: 0;
+    width: 66% !important;
+    position: absolute !important;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 2em;
+    z-index:1;
+}
+
+#left {
+    width: 50px;
+    height: 50px;
+    position: relative !important;
+    cursor: pointer;
+    left: -5%;
+}
+
+#right {
+    position: relative !important;
+    cursor: pointer;
+    right: -5%;
+}
+
+.timeline-container {
+    min-height: 750px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 39.5% 3% 3% 3% 3% 3% 3% 3% 39%
+    /*33% 4.71% 4.71% 4.71% 4.71% 4.71% 4.71% 4.71% 33%*/
+    ;
+    grid-template-rows: 25% 25% 25% 25%;
+    margin-top: 50px;
+}
+
+.timeline {
+    height: 100%;
+    width: 12px;
+    justify-self: center;
+    /*grid-area: 1; virker ikke, width bestemmer bredde*/
+    /*display: grid;
+       height: 100%;
+    width: 100%;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+     grid-column-start: 3;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 4;*/
+    /*background-color: aquamarine;*/
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    z-index:1;
+    border-radius: 10px;
+    box-shadow:3px 3px var(--mblue);
+}
+
+.row {
+    --bs-gutter-x:0;
+}
+
+.grid-line {
+    height: 2px;
+    /*husk width:100%; til alle grid elementer, ellers falder de tilbage på width:0;*/
+    width:100%;
+    grid-column-start: 1 !important; 
+    grid-column-end: 10 !important;
+    background-color: var(--yellow);
+    z-index: 1;
+}
+.timeline-dot-bar {
+    width:100%;
+    display:grid;
+    grid-template-columns: var(--work) var(--work) var(--work) var(--work) var(--work) var(--work);
+    grid-template-rows: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+.timeline-dot {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+    z-index: 1;
+}
+.timeline-dot > div {
+    /*TODO: dette element skal være lavere end connect-line-container. z-index: -10; virker ikke */
+    z-index:-10;
+}
+.timeline-dot:hover {
+    cursor:default;
+}
+.dot {
+    margin-left:10px;
+    display: inline;
+    height: 20px;
+    width: 20px;
+    
+}
+
+.floatBox {
+    height:max-content;
+    box-sizing: border-box  !important;
+    position: absolute;
+    z-index:3;
+    background-color: rgb(83, 83, 83);
+    opacity: .95;
+    border-width:3px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    color: var(--yellow);
+    font-weight: 500;
+    padding:10px;
+}
+.connect-line-container {
+    width: 0;
+    height:0;
+    position: absolute;
+    /*z-index skal være 0 for at connect-line viser sig*/
+    z-index: 1;
+    
+}
+
+.connect-line {
+position: absolute;
+    /*height: 50px;
+    width: 50px;*/
+    pointer-events: none;
+}
+
+line {
+    height: 100%;
+}
+
+.navbar {
+width:100%;
+height:50px;
+    position: absolute;
+    display:flex;
+padding:0;
+margin-top:5px;
+padding-right:5px;
+padding-left: 5px;
+}
+.navbar-content {
+height: 100%;
+width:auto;
+color: var(--yellow);
+font-weight:bold;
+align-self:center;
+cursor:pointer;
+}
+.no-link {
+text-decoration:none;
+color: unset;
+}
+.row {
+    min-height: 20px;
+}
+
+.hero-right {
+    display: flex;
+    justify-content: right;
+    margin-right: 10%;
+}
+
+.hero {
+    height: fit-content;
+    opacity: 100%;
+    position: relative;
+}
+
+.transition-text {
+    transition: opacity 1s;
+}
+
+.flex {
+    display: flex;
+}
+
+.text {
+    position: relative;
+    z-index: 2;
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.l-blue {
+    background-color: var(--lblue);
+}
+
+.m-blue {
+    background-color: var(--mblue);
+}
+
+.d-blue {
+    background-color: var(--dblue);
+}
+
+.circle {
+    border-radius: 100%;
+    background-color: var(--mblue);
+    position: absolute;
+    z-index: 0;
+    opacity: 100%;
+    filter: blur(12px);
+    
+}
+
+.year {
+    grid-column-start:1 ;
+    grid-column-end: 1;
+    z-index:1;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--dblue);
+
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--mblue);
+    border-radius: 5px;;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    box-shadow: 5px;
+}
+::-webkit-scrollbar-button {
+    
+display: none;
+}
+
+/*predict.html*/
+.form-grid-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 100% !important;
+    min-height: 450px;
+    height: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto /*16.7% 16.7% 16.7% 16.7% 16.7% 16.7%*/;
+    align-content:space-between;
+    margin-right: 15%;
+}
+/*
+.prediction-meter-container {
+    display: grid;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    justify-items: center;
+    border-style: solid;
+    border-color: var(--yellow);
+    border-width: 2px;
+    margin:25px;
+    margin-top: 3rem;
+    grid-column-start: 3;
+    grid-row-start: 1 !important; 
+
+}
+
+.prediction-meter {
+    box-sizing: border-box;
+    height: 90%;
+    width: 90%;
+    background-color: var(--yellow);
+    justify-self: center;
+    margin-top: 5px;
+    align-self: flex-start;
+}
+*/
+.p-meter-container {
+    height:100%;
+    width:75px;
+    border-style: solid;
+    border-color: var(--yellow);
+    border-width: 2px;
+    border-radius: 2px;
+    display: grid;
+   align-self: flex-end;
+   justify-self: left;
+   grid-row-start:1;
+   grid-row-end:6;
+   grid-column-start:2;
+
+}
+
+.p-meter {
+max-height:98%;
+
+    justify-self: center;
+    align-self:flex-end;
+    background-color: var(--yellow);
+    width:90%;
+    min-height: 2%;
+margin-bottom:4px;
+
+}
+
+.smbox {
+    width: auto;
+    justify-self: left;
+    font-size: 1rem;
+    margin-bottom: 0;
+    background-color: transparent;
+    border-color:var(--yellow);
+    border-style: solid;
+    box-shadow: none;
+    color:var(--yellow);
+    font-size:.9vw;
+}
+
+.smbox-desc {
+    color:var(--yellow);
+    font-size: .9vw;
+    font-weight: bold;
+}
+
+.p-meter-w {
+height: 90%;
+width:100%;
+display:grid;
+grid-column-start: 3;
+grid-row-start: 1;
+align-content: space-between;
+align-self: flex-end;
+color:var(--yellow);
+font-weight: bold;
+grid-template-columns:50% 50%;
+grid-template-rows: 20% 20% 20% 20% 20%;
+grid-column-gap: 10px
+}
+
+.p-meter-w-txt {
+display:flex;
+justify-self:right;
+grid-column-start:1;
+align-self:center;
+font-size:1vw;
+}
