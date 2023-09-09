@@ -30,7 +30,7 @@ function generateCircles() {
 
         for (var key in attrs) {
             el.setAttribute(key, attrs[key]);
-            console.log(el)
+            //console.log(el)
         }
 
         /*for (let i = 0; i < 8; i++) {

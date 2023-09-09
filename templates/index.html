@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html class="d-blue"lang="en">
+<html class="d-blue" lang="en">
 
 <head>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/styles/styles.css">
+    <!--
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/styles.css')}}">
+        -->
     <script src="https://kit.fontawesome.com/e2b431fb6d.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,17 +17,23 @@
 </head>
 
 <body>
+    <script async defer src="/static/scripts/circles.js"></script>
+    <!--
     <script async defer src="{{url_for('static', filename='scripts/circles.js')}}"></script>
-
+-->
 
 
     <main id="main" class="grid d-blue g-0 " style="z-index: -1;">
 
         <!--overflow issue due to padding. Current fix: overflow:hidden <div class="row g-0">-->
-        <nav  class="navbar">
-            <a class="no-link" style="margin-left:auto;align-self:center;" href="/AImodel.html" > <div class="navbar-content" style="background-color:var(--yellow); border-radius:15px;color:var(--dblue); align-self:center; padding:10px;">Prøv min AI-model!</div></a>
+        <nav class="navbar">
+            <a class="no-link" style="margin-left:auto;align-self:center;" href="/AImodel.html">
+                <div class="navbar-content"
+                    style="background-color:var(--yellow); border-radius:15px;color:var(--dblue); align-self:center; padding:10px;">
+                    Prøv min AI-model!</div>
+            </a>
         </nav>
-       <div  style="height:100%" class="row g-0">
+        <div style="height:100%" class="row g-0">
 
             <div style="height:100%;" class="col-2"></div>
             <div style="height:100%;" class="col-8">
@@ -34,11 +43,7 @@
                             <div class="fs-1">jeg hedder <span
                                     style="position: absolute;transform: rotate(-30deg);letter-spacing: 10px; ">e</span><span
                                     style="opacity: 0;letter-spacing: 10px;">e</span>mil</div>
-                            <div style="margin-top: 30px;" class=" opacity-gradient yellow lead">Lorem, ipsum dolor sit
-                                amet consectetur adipisicing elit. Incidunt asperiores, ex magni quibusdam nemo delectus
-                                minima laudantium, perferendis modi reprehenderit illum aperiam similique laboriosam.
-                                Minima molestiae odit error
-                                assumenda animi.</div>
+                            <div style="margin-top: 30px; line-height:18px;" class=" opacity-gradient yellow lead">Siden jeg var lille har jeg altid været intereseret i at prøve nye ting og lære nye emner. Jeg elsker at forbedre mine færdigheder og jeg er altid klar på en udfordring</div>
                         </div>
                     </div>
                 </div>
@@ -59,28 +64,28 @@
                                         <circle cx="10" cy="10" r="10" fill="var(--brown)" />
                                     </svg>
                                 </div>
-                                <div id="tian_fu"class="timeline-dot">
-                                    <div >Tjener - Tian FU</div><svg class="dot">
+                                <div id="tian_fu" class="timeline-dot">
+                                    <div>Tjener - Tian FU</div><svg class="dot">
                                         <circle cx="10" cy="10" r="10" fill="black" />
                                     </svg>
                                 </div>
                                 <div class="timeline-dot" id="dbu">
-                                    <div >Fodboldtræner -<br> DBU</div><svg class="dot">
+                                    <div>Fodboldtræner -<br> DBU</div><svg class="dot">
                                         <circle cx="10" cy="10" r="10" fill="white" />
                                     </svg>
                                 </div>
                                 <div class="timeline-dot" id="vb">
-                                    <div >Fodboldtræner -<br> VB</div><svg class="dot">
+                                    <div>Fodboldtræner -<br> VB</div><svg class="dot">
                                         <circle cx="10" cy="10" r="10" fill="var(--lblue)" />
                                     </svg>
                                 </div>
                                 <div class="timeline-dot" id="havemand">
-                                    <div >Havemand</div><svg class="dot">
+                                    <div>Havemand</div><svg class="dot">
                                         <circle cx="10" cy="10" r="10" fill="var(--mblue)" />
                                     </svg>
                                 </div>
                                 <div class="timeline-dot" id="blindes_jul">
-                                    <div >Sælger - Blindes Jul</div><svg class="dot">
+                                    <div>Sælger - Blindes Jul</div><svg class="dot">
                                         <circle cx="10" cy="10" r="10" fill="var(--red)" />
                                     </svg>
                                 </div>
@@ -133,11 +138,27 @@
                         <slider-content id="skills">
                             <div class="fs-1 text fw-bold yellow hero-left">Skills</div>
 
-                            <div class="yellow lead col-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vitae ab
-                                iusto rerum sapiente adipisci officiis neque? Corporis, voluptas eum, debitis nobis
-                                iusto, nemo
-                                tempore ipsum molestias cumque obcaecati dolorem cum!</div>
+                            <div class="skills-container">
+                                <div class="skills-key">
+                                    <div class="skills-key-txt yellow">Problemløsning</div>
+                                    <div class="skills-key-txt yellow">Python</div>
+                                    <div class="skills-key-txt yellow">Javascript</div>
+                                    <div class="skills-key-txt yellow">Linux</div>
+                                </div>
+                                <div class="skills-meter-container">
+                                    <div id="problemløsning" class="skills-meter"></div>
+                                    <div id="python" class="skills-meter"></div>
+                                    <div id="javascript" class="skills-meter"></div>
+                                    <div id="linux" class="skills-meter"></div>
+                                </div>
+                                <div class="skills-value-container">
+                                    <div id="sproblemløsning" class="skills-value"></div>
+                                    <div id="spython" class="skills-value"></div>
+                                    <div id="sjavascript" class="skills-value"></div>
+                                    <div id="slinux" class="skills-value"></div>
+                                </div>
+                            </div>
+                            <div class="yellow lead"></div>
                         </slider-content>
                     </slider>
 
@@ -154,8 +175,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+    <!--
     <script src="{{url_for('static', filename='scripts/slider.js')}}"></script>
     <script src="{{url_for('static', filename='scripts/hover.js')}}"></script>
+        -->
+    <script src="/static/scripts/slider.js"></script>
+    <script src="/static/scripts/hover.js"></script>
+    <script src="/static/scripts/skills.js"></script>
 </body>
 
 </html>

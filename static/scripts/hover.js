@@ -1,5 +1,5 @@
 const helmuth = document.querySelectorAll("#helmuth")
-const helmuth_description = "Mit arbejde på helmuth bestod af bla bla"
+const helmuth_description = "Jeg startede på Helmuth som opvasker i 2020. Nu er jeg blevet forfremmet og står for brunch buffeten. Mit arbejde på Helmuth har lært mig at arbejde under press og løse problemer"
 const tian_fu = document.querySelectorAll("#tian_fu")
 const tian_fu_description = "På Tian Fu arbejdede jeg som tjener og afrydder. Jeg havde til opgave at; seate gæster, tage imod bestillinger og servere mad og drikkevarer"
 const dbu = document.querySelectorAll("#dbu")
@@ -7,9 +7,9 @@ const dbu_description = "Jeg har været træner på fodboldskolen i VB de sidste
 const vb = document.querySelectorAll("#vb")
 const vb_description = "I VB har jeg selv spillet fodbold og nu træner jeg u15 drenge. Foruden u15 drenge har jeg trænet u4-u6 mix i flere sæsoner"
 const havemand = document.querySelectorAll("#havemand")
-const havemand_description = "Mit første job var havemand som 13-årig, i dette job passede jeg haver, klippede hække og samlede endda møbler for folk i lokalområdet"
+const havemand_description = "Mit første job var havemand som 13-årig, i dette job passede jeg haver, klippede hække og samlede møbler for folk i lokalområdet"
 const blindes_jul = document.querySelectorAll("#blindes_jul")
-const blindes_jul_description = "I en årrække solgte jeg Blindes Jul bladet"
+const blindes_jul_description = "I en årrække solgte jeg Blindes Jul bladet. I dette arbejde lærte jeg lidt om salgskunsten"
 const main = document.querySelector("main")
 /*
 function crtBox(txt) {
@@ -52,7 +52,7 @@ function crtBox(description) {
     //txt.id = id
     document.body.appendChild(txt);
     txt.innerHTML = description
-    console.log(txt)
+    //console.log(txt)
     //console.log(txt.style.getPropertyValue())
     
     
@@ -66,7 +66,7 @@ function crtBox(description) {
     /*connectLine.setAttribute('height', '500')
     connectLine.setAttribute('width','500')*/
     connectLine.setAttribute('overflow','visible')
-    console.log(connectLine)
+    //console.log(connectLine)
     line.classList.add("connect-line")
 
     
@@ -74,7 +74,7 @@ function crtBox(description) {
 }
 
 function getmouse(e) {
-    console.log("getmouse is running")
+    //console.log("getmouse is running")
     mouseX = e.pageX;
     mouseY = e.pageY;
     txt.style.top = mouseY + -100 + "px";
@@ -94,8 +94,8 @@ function getmouse(e) {
     line.setAttribute('stroke', 'black');
 line.setAttribute('stroke-width', '3');
 document.body.appendChild(connectLine);
-console.log(mouseX, mouseY, mouseX + 50, mouseY - 100 + parseFloat(elemHeight));
-console.log(line);
+//console.log(mouseX, mouseY, mouseX + 50, mouseY - 100 + parseFloat(elemHeight));
+//console.log(line);
 connectLine.appendChild(line)
 
     
@@ -113,7 +113,7 @@ connectLine.appendChild(line)
 }
 
 function delBox() {
-    console.log("delBox is running")
+    //console.log("delBox is running")
     document.body.removeChild(txt)
     document.body.removeChild(connectLine)
 
