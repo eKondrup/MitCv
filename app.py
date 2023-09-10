@@ -30,7 +30,7 @@ def predict():
     data_tensor = tf.convert_to_tensor(df, dtype=tf.float32)
 
     # Make predictions
-    model = tf.keras.models.load_model("titanic_model.keras")
+    model = tf.keras.models.load_model("titanic_model_2_9_0.h5")
     predictions = model.predict(data_tensor)
     predictions = str(predictions)
 
