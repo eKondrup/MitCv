@@ -2,8 +2,9 @@ const helmuth = document.querySelectorAll("#helmuth")
 const helmuth_description = "Jeg startede på Helmuth som opvasker i 2020. Nu er jeg blevet forfremmet og står for brunch buffeten. Mit arbejde på Helmuth har lært mig at arbejde under press og løse problemer"
 const tian_fu = document.querySelectorAll("#tian_fu")
 const tian_fu_description = "På Tian Fu arbejdede jeg som tjener og afrydder. Jeg havde til opgave at; seate gæster, tage imod bestillinger og servere mad og drikkevarer"
-const dbu = document.querySelectorAll("#dbu")
-const dbu_description = "Jeg har været træner på fodboldskolen i VB de sidste fire år. Her har jeg skulle koordinere og udføre træninger samt tilpasse mig børnenes behov. Jeg har trænet årgange fra u9 - u15"
+const fakta = document.querySelectorAll("#fakta")
+const fakta_description =  "I fakta, senere Coop 365, var jeg servicemedarbejder og hjalp til rundt i butikken. "
+//const dbu_description = "Jeg har været træner på fodboldskolen i VB de sidste fire år. Her har jeg skulle koordinere og udføre træninger samt tilpasse mig børnenes behov. Jeg har trænet årgange fra u9 - u15"
 const vb = document.querySelectorAll("#vb")
 const vb_description = "I VB har jeg selv spillet fodbold og nu træner jeg u15 drenge. Foruden u15 drenge har jeg trænet u4-u6 mix i flere sæsoner"
 const havemand = document.querySelectorAll("#havemand")
@@ -133,8 +134,8 @@ tian_fu.forEach( (i) =>{
     i.addEventListener('mouseleave', delBox, false)
 })
 
-dbu.forEach( (i) =>{
-    i.addEventListener('mouseenter', ()=> {crtBox(dbu_description)})
+fakta.forEach( (i) =>{
+    i.addEventListener('mouseenter', ()=> {crtBox(fakta_description)})
     i.addEventListener('mousemove', getmouse, false)
     i.addEventListener('mouseleave', delBox, false)
 })
