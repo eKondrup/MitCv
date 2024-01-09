@@ -1,7 +1,7 @@
-const problemløsning_val = "82%"
-const python_val = "40%"
-const javascript_val = "45%"
-const linux_val = "55%"
+const problemløsning_val = "68%"
+const python_val = "30%"
+const javascript_val = "25%"
+const linux_val = "35%"
 console.log("skills.js running")
 
 //skills meter
